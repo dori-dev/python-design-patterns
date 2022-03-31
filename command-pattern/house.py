@@ -1,4 +1,4 @@
-"""home trade system
+"""house trade system
 using command design patterns"""
 from abc import ABC, abstractmethod
 from typing import List
@@ -9,21 +9,27 @@ class Order(ABC):
     """
     @abstractmethod
     def execute(self):
-        """Execute command or commands
+        """execute command or commands
         """
-        pass
+
+    @abstractmethod
+    def describe(self):
+        """order description
+        """
 
 
 class HouseTrade:
     """Buying and selling a home
     """
 
-    def buy(self):
+    @staticmethod
+    def buy():
         """The buyer buys the house
         """
         print("You are buying this house.")
 
-    def sell(self):
+    @staticmethod
+    def sell():
         """The seller is selling the house
         """
         print("You are selling this house")
@@ -41,6 +47,9 @@ class BuyHouse(Order):
         """
         self.house.buy()
 
+    def describe(self):
+        print("cheap and amazing house")
+
 
 class SellHouse(Order):
     """sell a house
@@ -54,6 +63,9 @@ class SellHouse(Order):
         """
         self.house.sell()
 
+    def describe(self):
+        print("big and beautiful house")
+
 
 class Agent:
     """order management
@@ -63,9 +75,16 @@ class Agent:
         self.__order_queue: List[Order] = []
 
     def request_order(self, order: Order):
+        """request a order
+
+        Args:
+            order (Order): the order
+        """
         self.__order_queue.append(order)
 
     def place_orders(self):
+        """place all orders
+        """
         for order in self.__order_queue:
             order.execute()
 
@@ -86,3 +105,4 @@ if __name__ == "__main__":
 
     # place orders
     agent.place_orders()
+    print()

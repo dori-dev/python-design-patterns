@@ -10,9 +10,10 @@ Python Design Pattern Examples
 | :------------------------------------: | :-------------: |
 |      [Profile Maker](profile.py)       |     factory     |
 |        [House Trader](house.py)        |     command     |
+| [Subscriber Management](subscriber.py) |    observer     |
+|     [Mobile Management](mobile.py)     |      state      |
 |      [Code Compiler](compiler.py)      | template method |
 |  [Automatic Door](automatic_door.py)   |      state      |
-| [Subscriber Management](subscriber.py) |    observer     |
 
 #
 

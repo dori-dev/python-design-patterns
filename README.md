@@ -14,6 +14,7 @@ Python Design Pattern Examples
 |     [Mobile Management](mobile.py)     |      state      |
 |      [Code Compiler](compiler.py)      | template method |
 |  [Automatic Door](automatic_door.py)   |      state      |
+|         [Payment](payment.py)          |      proxy      |
 
 #
 
